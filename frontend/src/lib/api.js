@@ -1,5 +1,13 @@
-const API_URL = import.meta.env.VITE_API_URL || 'https://anuj-verma-portfolio.onrender.com/api';
-export const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'https://anuj-verma-portfolio.onrender.com';
+// Use production URL, only use env var if explicitly set to a non-localhost value
+const envApiUrl = import.meta.env.VITE_API_URL;
+const API_URL = (envApiUrl && !envApiUrl.includes('localhost')) 
+  ? envApiUrl 
+  : 'https://anuj-verma-portfolio.onrender.com/api';
+
+const envBaseUrl = import.meta.env.VITE_API_BASE_URL;
+export const API_BASE_URL = (envBaseUrl && !envBaseUrl.includes('localhost'))
+  ? envBaseUrl
+  : 'https://anuj-verma-portfolio.onrender.com';
 
 export const fetchProjects = async () => {
   try {
