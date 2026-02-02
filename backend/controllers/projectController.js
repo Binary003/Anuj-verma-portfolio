@@ -12,6 +12,7 @@ const __dirname = path.dirname(__filename);
 export const getProjects = async (req, res) => {
   try {
     const projects = await Project.find().sort({ order: 1, createdAt: -1 });
+    res.set('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate');
     res.json({ success: true, data: projects });
   } catch (error) {
     res.status(500).json({ success: false, message: error.message });

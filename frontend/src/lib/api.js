@@ -3,7 +3,10 @@ export const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'https://anuj-v
 
 export const fetchProjects = async () => {
   try {
-    const response = await fetch(`${API_URL}/projects`);
+    const response = await fetch(`${API_URL}/projects`, {
+      cache: 'no-store',
+      headers: { 'Cache-Control': 'no-cache' }
+    });
     const data = await response.json();
     return data.success ? data.data : [];
   } catch (error) {
@@ -14,7 +17,10 @@ export const fetchProjects = async () => {
 
 export const fetchSkills = async () => {
   try {
-    const response = await fetch(`${API_URL}/skills`);
+    const response = await fetch(`${API_URL}/skills`, {
+      cache: 'no-store',
+      headers: { 'Cache-Control': 'no-cache' }
+    });
     const data = await response.json();
     return data.success ? data.data : [];
   } catch (error) {

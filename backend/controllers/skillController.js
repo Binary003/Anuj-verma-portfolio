@@ -6,6 +6,7 @@ import Skill from '../models/Skill.js';
 export const getSkills = async (req, res) => {
   try {
     const skills = await Skill.find().sort({ category: 1, order: 1 });
+    res.set('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate');
     res.json({ success: true, data: skills });
   } catch (error) {
     res.status(500).json({ success: false, message: error.message });
