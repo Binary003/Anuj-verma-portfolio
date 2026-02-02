@@ -51,6 +51,7 @@ const Login = () => {
                 }
                 className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-blue-500"
                 placeholder="Enter your email"
+                autoComplete="email"
                 required
               />
             </div>
@@ -67,6 +68,7 @@ const Login = () => {
                 }
                 className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-blue-500"
                 placeholder="Enter your password"
+                autoComplete="current-password"
                 required
               />
             </div>
