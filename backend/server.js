@@ -25,6 +25,7 @@ const allowedOrigins = [
   'http://localhost:5174',
   'https://admin-anujverma.vercel.app',
   'https://anuj-verma-portfolio.onrender.com',
+  'https://anujvermadev.vercel.app',
   process.env.FRONTEND_URL,
   process.env.ADMIN_URL
 ].filter(Boolean);
