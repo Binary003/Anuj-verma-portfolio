@@ -39,5 +39,3 @@ export const submitContact = async (formData) => {
     return { success: false, message: 'Failed to send message' };
   }
 };
-
-export const API_BASE_URL = 'http://localhost:5000';
